@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <title>Table Demo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        h1 {
+            font-family: 'Rock Salt', cursive;
+        }
+        table th {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        table td {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        table {
+            border-spacing: 0;
+            width: 300px;
+        }
+        table td, table th {
+            border: thin black solid;
+            /* padding: 3px;  (direction: top) */
+            /* padding: 3px 5px;  (direction: top then bottom, then left then right) */
+            padding: 3px 5px 9px 11px;/* direction (direction: starting from the top going clockwise) */
+/* on a table, the size elements default to relative to content*/
+        }
+        td:last-of-type {
+           text-align: right; 
+        }
+/* serif font is more brush stroke font like calligraphy, sans serif is more type pr print font.
+to see all fonts available, go to https://fonts.gogle.com.
+monospace fonts are primarily used for code as all characters have the same width. */
+    </style>
+</head>
+<body>
+    <table id = "musicians">
+        <thead>
+            <tr>
+            <th width="150px">First</th>
+            <th width="150px">Last</th>
+            <th width="200px">Nationality</th>
+<!-- Table size can be tarteted but for one table per page, recommend to put in tjead -->
+            </tr>
+            <tr>
+                <th>First</th>
+                <th>Last</th>
+                <th>Nationality</th>
+            </tr>
+        </thead>
+        <tbody>
+<!-- th = table header, td = table data -->
+            <tr>
+                <td>Destra</td>
+                <td></td>
+                <td>Carribean</td>
+            </tr>
+            <tr>
+                <td>Billie</td>
+                <td>Eilish</td>
+                <td>American</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        let musicians = document.querySelector('#musiciands tbody');
+        console.log(musicians);
+
+        // <tr>
+            let row = document.createElement('tr');
+            musicians.appendChild(row);
+
+            let tdFrist = document.createElement('td');
+            let tdLast = document.createElement('td');
+            let tdNationality = document.createElement('td');
+
+            row.appendChild(tdFrist);
+            row.appendChild(tdLast);
+            row.appendChild(tdNationality);
+
+            tdFirst.textContent = 'Sean';
+            tdLast.textContent = 'Paul';
+            tdNationality.textContent = '';
+            
+            console.log(musicians);
+
+            function Musician(first_param, last_param, nationality_param) {
+                // this === {}
+                this.first = first_param;
+                this.last = last_param;
+                // this === {first: first_param, last: last_param}
+                this.nationality = nationality_param;
+
+                this.render = function() {}
+            }
+            
+            let m = new Musician('Natalija', 'Germek', 'Codefellows');
+            m.render();
+            
+            let musiciansArray = [
+                new Musician('John', 'Legend', 'American'),
+                new Musician('Pink', '', 'American'),
+            ];
+
+            let first = prompt("Musician First Name: ");
+            let last = prompt("Musician Last Name: ");
+            let nationality = prompt("Musician Nationality: ");
+            let newMusician = new Musician(first, last, nationality);
+            musiciansArray.push(newMusician);
+        
+            console.log(musiciansArray);
+
+            for (let i = 0; i < musiciansArray.length, i ++)
+// line 118 till end are incomplete. rewatch lecture.
+
+    </script>
+</body>
+
+
+<!-- step 1. create header (hours and hourly total) function
+    step 2. create footer (totals) function
+    step 3. create location function -->
